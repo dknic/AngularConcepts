@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrl: './parent.component.css',
 })
 export class ParentComponent {
-  parentMessage = 'Message from Parent';
+  childReply: string = '';
+
+  handleReply(data: string) {
+    console.log(data);
+    this.childReply = data;
+  }
 }

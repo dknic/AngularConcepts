@@ -1,4 +1,9 @@
 <p>parent works!</p>
 
-<input type="text" [(ngModel)]="parentMessage" placeholder="parentMessage">
-<app-child [message]="parentMessage"></app-child>
+<!-- when ever want to send data use []
+when ever want to receive data use () -->
+<app-child (replyEvent)="handleReply($event)"></app-child>
+
+<div *ngIf="childReply">
+  <p> Child Replied:{{childReply}}</p>
+</div>
