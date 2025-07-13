@@ -1,9 +1,11 @@
-<p>parent works!</p>
+<p>parent component works!</p>
+
 
 <!-- when ever want to send data use []
 when ever want to receive data use () -->
-<app-child (replyEvent)="handleReply($event)"></app-child>
+<!-- @ViewChild is a powerful decorator that lets a parent component directly access and interact with elements, directives, or child components in its template. Here's a breakdown of how it works and when to use it:-->
 
-<div *ngIf="childReply">
-  <p> Child Replied:{{childReply}}</p>
-</div>
+<app-child></app-child>
+
+<button (click)="updateChild()">Update Child</button>
+

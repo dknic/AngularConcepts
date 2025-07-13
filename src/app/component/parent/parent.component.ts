@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild, viewChild } from '@angular/core';
+import { ChildComponent } from '../child/child.component';
 
 @Component({
   selector: 'app-parent',
@@ -6,10 +7,9 @@ import { Component } from '@angular/core';
   styleUrl: './parent.component.css',
 })
 export class ParentComponent {
-  childReply: string = '';
+  @ViewChild(ChildComponent) child!: ChildComponent;
 
-  handleReply(data: string) {
-    console.log(data);
-    this.childReply = data;
+  updateChild() {
+    this.child.changeMessage();
   }
 }

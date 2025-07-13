@@ -6,11 +6,8 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
   styleUrl: './child.component.css',
 })
 export class ChildComponent {
-  // @Input() message: string = 'childMessage';
-  @Output() replyEvent = new EventEmitter<string>();
-
-  reply: string = '';
-  send() {
-    this.replyEvent.emit(this.reply);
+  message = 'Hello from Child!';
+  changeMessage() {
+    this.message = 'Message changed!';
   }
 }
